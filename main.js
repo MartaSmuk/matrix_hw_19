@@ -1,10 +1,25 @@
 "use strict";
 
-// let nArrayLength = +prompt("Please enter array length");
-let nArrayLength = 3;
-let chosenNum = 4;
-let rowIndex = 2;
-let colIndex = 2;
+let nArrayLength = +prompt("Please enter the size of the Matrix");
+
+while (nArrayLength < 1 || isNaN(nArrayLength)) {
+    nArrayLength = +prompt("Please enter the size of the Matrix");
+}
+
+let chosenNum = +prompt("Please enter the number you want to add to the right corner of the matrix");
+while (chosenNum < 1 || isNaN(chosenNum)) {
+    chosenNum = +prompt("Please enter the number you want to add to the right corner of the matrix");
+}
+
+let chosenRowInd = +prompt("Please enter the number of the row you want to find the sum of, note that the number should be smaller or equal to the size of the matrix", Math.floor(nArrayLength/2));
+while (chosenRowInd < 1 || isNaN(chosenRowInd) || chosenRowInd >= nArrayLength) {
+    chosenRowInd = +prompt("Please enter the number you want to add to the right corner of the matrix");
+}
+
+let chosenColInd = +prompt("Please enter the number of the col you want to find the sum of, note that the number should be smaller or equal to the size of the matrix", Math.floor(nArrayLength/2));
+while (chosenColInd < 1 || isNaN(chosenColInd) || chosenColInd >= nArrayLength) {
+    chosenColInd = +prompt("Please enter the number you want to add to the right corner of the matrix");
+}
 
 
 let matrixArray = [];
@@ -152,7 +167,7 @@ document.write("10. Сума рядкa с: ");
 let sumGivenRow = 0;
 for(let i = 0; i < nArrayLength; i++) {
     for (let j = 0; j < nArrayLength; j++) {
-        if(i === rowIndex) {
+        if(i === chosenRowInd) {
             sumGivenRow += matrixArray[i][j];
         }
     }
@@ -166,7 +181,7 @@ document.write("11. Сума стовпця k: ");
 let sumGivenCol = 0;
 for(let i = 0; i < nArrayLength; i++) {
     for(let j = 0; j < nArrayLength; j++) {
-        if(j === colIndex) {
+        if(j === chosenColInd) {
             sumGivenCol += matrixArray[i][j];
         }
     }
