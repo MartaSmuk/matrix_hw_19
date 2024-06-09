@@ -22,31 +22,29 @@ while (chosenColInd < 1 || isNaN(chosenColInd) || chosenColInd >= nArrayLength) 
 }
 
 /*****************************Create Matrix********************************* */
-document.write("Виконати з заповнення масиву випадковими числами: ");
-document.write("<br/>");
-document.write("<br/>");
-const matrixBox = document.querySelector(".myMatrix");
 
+
+document.write("<table>"); 
 let matrixArray = [];
 for (let i = 0; i < nArrayLength; i++) {  //iterate rows
     matrixArray[i] = [];
     for (let j = 0; j < nArrayLength; j++) {    //iterate columns
         matrixArray[i][j] = Math.floor(Math.random() * nArrayLength);
-        if(i === 0 && j === nArrayLength) {
+        if(i === 0 && j === nArrayLength-1) {
             matrixArray[i][j] = chosenNum;
         }
         document.write(matrixArray[i][j] + "&nbsp;&nbsp;");
     }
-    document.write("<br/>");
+    document.write("<br>");
 }
-document.write("<br/>");
-document.write("<br/>");
+
+document.write("</table>");
+document.write("<br>");
+document.write("Виконати з заповнення масиву випадковими числами");
+document.write("<div>");
 /**********************************1*************************************** */
 
-//document.write(sumPrimDiag);
-document.write( "<br/>");
 let sumPrimDiag = 0;
-
 document.write("<table>");   //generate table
 for (let i = 0; i < nArrayLength; i++) {           //iterate rows
     document.write("<tr>");
@@ -61,15 +59,11 @@ for (let i = 0; i < nArrayLength; i++) {           //iterate rows
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("1. Сума головної діагоналі: " + sumPrimDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************2*************************************** */
 let sumSecDiag = 0;
-
 document.write("<table>");
 for(let i = 0; i < nArrayLength; i++) {    //iterate rows
     document.write("<tr>");
@@ -85,13 +79,10 @@ for(let i = 0; i < nArrayLength; i++) {    //iterate rows
 }
 
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("2. Сума побочної діагоналі: ");
 document.write(sumSecDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************3*************************************** */
 document.write("<table>"); 
 let sumOverPrimNoDiag = 0;
@@ -108,13 +99,10 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write( "<br/>");
+document.write( "<br>");
 document.write("3. Сума половини матриці без головної діагоналі зверху cправа: ");
 document.write(sumOverPrimNoDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************4*************************************** */
 
 document.write("<table>"); 
@@ -132,13 +120,10 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("4. Сума половини матриці з головною діагоналлю зверху cправа: ");
 document.write(sumOverPrimDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************5*************************************** */
 
 document.write("<table>"); 
@@ -156,13 +141,10 @@ for(let i = 0; i < nArrayLength; i++) {
 }
 
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("5. Сума половини матриці без головної діагоналі знизу зліва: ");
 document.write(sumUnderPrimNoDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************6*************************************** */
 
 document.write("<table>"); 
@@ -179,13 +161,10 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("6. Сума половини матриці з головною діагоналлю знизу зліва: ");
 document.write(sumUnderPrimDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************7*************************************** */
 
 document.write("<table>"); 
@@ -202,13 +181,11 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("7. Сума половини матриці без побічної діагоналі зверху зліва: ");
 document.write(sumOverSecNoDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<br>");
+document.write("<div>");
 /**********************************8*************************************** */
 
 document.write("<table>");
@@ -225,14 +202,11 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("8. Сума половини матриці з побочною діагоналлю зверху зліва: ");
 document.write(sumOverSecDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-/**********************************9*************************************** */
+document.write("<div>");
+//********9*************************************** */
 
 document.write("<table>");
 let sumUnderSecNoDiag = 0;
@@ -248,13 +222,10 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("9. Сума половини матриці без побічної діагоналі внизу cправа: ");
 document.write(sumUnderSecNoDiag);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************10*************************************** */
 
 document.write("<table>");
@@ -271,13 +242,10 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("10. Сума рядкa с: ");
 document.write(sumGivenRow);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
 /**********************************11*************************************** */
 
 document.write("<table>");
@@ -294,10 +262,7 @@ for(let i = 0; i < nArrayLength; i++) {
     document.write("</tr>");
 }
 document.write("</table>");
-document.write("<br/>");
+document.write("<br>");
 document.write("11. Сума стовпця k: ");
 document.write(sumGivenCol);
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
-document.write("<br/>");
+document.write("<div>");
