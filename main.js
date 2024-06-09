@@ -232,7 +232,7 @@ document.write("<table>");
 let sumGivenRow = 0;
 for(let i = 0; i < nArrayLength; i++) {
     for (let j = 0; j < nArrayLength; j++) {
-        if(i === chosenRowInd) {
+        if(i === chosenRowInd - 1) {
             sumGivenRow += matrixArray[i][j];
             document.write("<td class='chosenEl'>" + matrixArray[i][j] + "</td>");
         } else {
@@ -252,7 +252,7 @@ document.write("<table>");
 let sumGivenCol = 0;
 for(let i = 0; i < nArrayLength; i++) {
     for(let j = 0; j < nArrayLength; j++) {
-        if(j === chosenColInd) {
+        if(j === chosenColInd - 1) {
             sumGivenCol += matrixArray[i][j];
             document.write("<td class='chosenEl'>" + matrixArray[i][j] + "</td>");
         } else {
